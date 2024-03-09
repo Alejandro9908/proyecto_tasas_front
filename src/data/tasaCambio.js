@@ -12,13 +12,10 @@ export async function addTasa (data) {
             headers: { 'Content-Type': 'application/json' }
         })
         if (!respuesta.ok) {
-            const errores = await respuesta.json(); // Obtiene los detalles de los errores
-            console.log('Errores de validación:', errores.errors);
-            return errores; // Devuelve los errores para manejarlos en el componente
+            const errores = await respuesta.json(); 
+            return errores; 
         } else {
-            const contenido = await respuesta.json();
-            console.log('Respuesta exitosa:', contenido);
-            return { success: true }; // Indica éxito
+            return { success: true }; 
         }
     } catch (e) {
         console.log(e);

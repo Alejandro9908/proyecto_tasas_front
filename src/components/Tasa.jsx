@@ -1,4 +1,4 @@
-import { useNavigate, Form, redirect } from "react-router-dom"
+import { Form, redirect } from "react-router-dom"
 import { deleteTasa } from "../data/tasaCambio";
 
 export async function action ({params}) {
@@ -7,7 +7,6 @@ export async function action ({params}) {
 }
 
 const Tasa = ({tasa}) => {
-    const navigate = useNavigate();
 
     return (
         <>

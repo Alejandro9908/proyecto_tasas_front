@@ -1,7 +1,7 @@
-import { Form, redirect, useLoaderData, useActionData } from "react-router-dom";
+import { redirect, useLoaderData } from "react-router-dom";
 import { getTasas, addTasa } from "../data/tasaCambio";
 import Tasa from "../components/Tasa";
-import Formulario from "../components/Formulario";
+
 
 export async function action ({request}) {
   const formData = await request.formData();

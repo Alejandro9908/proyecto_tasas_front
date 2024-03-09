@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
 const Moneda = ({moneda}) => {
-    const navigate = useNavigate();
 
     return (
         <tr className="border-b">
