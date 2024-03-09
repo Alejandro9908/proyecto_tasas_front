@@ -3,7 +3,7 @@ import { deleteTasa } from "../data/tasaCambio";
 
 export async function action ({params}) {
     await deleteTasa(params.id);
-    return redirect('/');
+    return redirect('/tasas-de-cambio');
 }
 
 const Tasa = ({tasa}) => {
@@ -16,10 +16,25 @@ const Tasa = ({tasa}) => {
                     <p>{tasa.id}</p>
                 </td>
                 <td className="p-2">
-                Promedio {tasa.venta_promedio}
+                Prom. {tasa.venta_promedio}
                 </td>
                 <td className="p-2">
-                    Promedio {tasa.compra_promedio}
+                    Prom. {tasa.compra_promedio}
+                </td>
+                <td>
+                    <Form
+                        method="POST"
+                        action={`/tasas-de-cambio/${tasa.id}/eliminar`}
+                        onSubmit={(e) => {
+                            if (!confirm('Deseas eliminar el registro?')) {
+                                e.preventDefault();
+                            }
+                        }}
+                    >
+                        <button className="px-1 bg-red-500 text-white rounded-sm">
+                            ×
+                        </button>
+                    </Form>
                 </td>
             </tr>
             {tasa.detalles.map( detalle => (

@@ -45,6 +45,7 @@ const IndexTasa = () => {
               <th className="p-2 text-left">FECHA</th>
               <th className="p-2 text-left">TC VENTA</th>
               <th className="p-2 text-left">TC COMPRA</th>
+              <th className="p-2 text-left"></th>
             </tr>
           </thead>
           <tbody className="text-sm">

@@ -25,11 +25,9 @@ export async function addTasa (data) {
     }
 }
 
-
-
 export async function deleteTasa (id) {
     try {
-        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/tasas-cambio/${id}`, {
             method: 'DELETE'
         })
         await respuesta.json();

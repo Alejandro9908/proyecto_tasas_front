@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
-import NuevaTasa, { action as storeCliente } from './pages/NuevaTasa';
-import { action as tasaEliminarAction } from './components/Moneda';
-import IndexMoneda, { loader as clientesLoader } from './pages/IndexMoneda';
+import NuevaTasa, { action as storeTasa } from './pages/NuevaTasa';
+import { action as tasaEliminarAction } from './components/Tasa';
+import IndexMoneda, { loader as monedasLoader } from './pages/IndexMoneda';
 import IndexTasa, { loader as tasasLoader } from './pages/IndexTasa';
 import Error from './pages/Error';
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter ([
       {
         index: true,
         element: <IndexMoneda/>,
-        loader: clientesLoader,
+        loader: monedasLoader,
         errorElement: <Error/>
       },
       {
@@ -29,9 +29,13 @@ const router = createBrowserRouter ([
       {
         path: '/tasas-de-cambio/nuevo',
         element: <NuevaTasa/>,
-        action: storeCliente,
+        action: storeTasa,
         errorElement: <Error/>
       },
+      {
+        path: '/tasas-de-cambio/:id/eliminar',
+        action: tasaEliminarAction,
+      }
     ]
   },
 ])

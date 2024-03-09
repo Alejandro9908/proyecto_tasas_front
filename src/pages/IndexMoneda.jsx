@@ -3,14 +3,14 @@ import { getMonedas } from "../data/monedas";
 import Moneda from "../components/Moneda";
 
 export function loader() {
-  const clientes = getMonedas();
-  return clientes;
+  const result = getMonedas();
+  return result;
 }
 
 const IndexMoneda = () => {
 
-  const clientes = useLoaderData();
-  const monedas = clientes.Variables.Variable;
+  const result = useLoaderData();
+  const monedas = result.Variables.Variable;
 
   return (
     <>

@@ -1,10 +1,4 @@
-import { useNavigate, Form, redirect } from "react-router-dom"
-import { deleteCliente } from "../data/monedas";
-
-export async function action ({params}) {
-    await deleteCliente(params.id);
-    return redirect('/');
-}
+import { useNavigate } from "react-router-dom"
 
 const Moneda = ({moneda}) => {
     const navigate = useNavigate();
